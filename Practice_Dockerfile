@@ -1,0 +1,14 @@
+FROM ubuntu
+
+MAINTAINER SHUBHAM TAWARE
+
+WORKDIR app
+
+COPY sendemail.sh .
+
+RUN echo "RUNNING THE ECHO COMMAND!!!!!!!"
+RUN apt-get update && apt-get install -y python3.6 && ln -s /usr/bin/python3.6 /usr/bin/python3
+
+ADD https://www.python.org/ftp/python/3.10.14/Python-3.10.14.tgz .
+
+CMD echo "RUNNING THE COMMANDS ON BUILT CONTAINER" 
